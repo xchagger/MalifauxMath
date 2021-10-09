@@ -5,84 +5,157 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
 	<TextView
 		android:id="@+id/textHeadingAttacker"
-		android:layout_width="116dp"
-		android:layout_height="53dp"
-		android:layout_marginTop="20dp"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
 		android:text="Attacker"
-		android:textSize="34sp"
+		android:textSize="16sp"
 		android:textStyle="bold"
 		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.0"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/editText" />
-		
+		tools:layout_editor_absoluteY="0dp" />
+
+
 	<TextView
-        android:id="@+id/textAttackerTotal"
-        android:layout_margin="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+		android:id="@+id/textAttackerTotal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="20dp"
 		android:text="Total"
-        android:textSize="34sp"
+		android:textSize="16sp"
 		app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textHeadingAttacker" />
-		/>
-		
+		app:layout_constraintHorizontal_bias="0.401"
+		app:layout_constraintStart_toEndOf="@+id/textHeadingAttacker"
+		tools:layout_editor_absoluteY="0dp" />
+
 	<TextView
-        android:id="@+id/textAttackerStat"
-        android:layout_margin="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+		android:id="@+id/textAttackerStat"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="20dp"
+		android:layout_marginTop="24dp"
 		android:text="Stat"
-        android:textSize="34sp"
+		android:textSize="16sp"
 		app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textAttackerTotal" />
-		/>
+		app:layout_constraintHorizontal_bias="0.0"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textHeadingAttacker" />
 
-    <SeekBar
-        android:id="@+id/seekBarAttackerStat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:max="10"
+	<SeekBar
+		android:id="@+id/seekBarAttackerStat"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="4dp"
+		android:max="10"
 		android:min="1"
-        android:progress="5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textAttackerStat" />
-
+		android:progress="5"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.0"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textAttackerStat" />
 
 	<TextView
 		android:id="@+id/textAttackerFlip"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_margin="20dp"
+		android:layout_marginTop="24dp"
 		android:text="Flip"
-        android:textSize="34sp"
+		android:textSize="16sp"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintHorizontal_bias="0.0"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toBottomOf="@+id/seekBarAttackerStat" />
-		/>
 
-    <SeekBar
-        android:id="@+id/seekBarAttackerFlip"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:max="10"
+	<SeekBar
+		android:id="@+id/seekBarAttackerFlip"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="4dp"
+		android:max="10"
 		android:min="1"
-        android:progress="5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textAttackerFlip" />
+		android:progress="5"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.0"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textAttackerFlip" />
 
+
+	<TextView
+		android:id="@+id/textHeadingDefender"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="24dp"
+		android:text="Defender"
+		android:textSize="16sp"
+		android:textStyle="bold"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/seekBarAttackerFlip" />
+
+	<TextView
+		android:id="@+id/textDefenderStat"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="20dp"
+		android:layout_marginTop="24dp"
+		android:text="Stat"
+		android:textSize="16sp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.005"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textHeadingDefender" />
+
+	<SeekBar
+		android:id="@+id/seekBarDefenderStat"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="4dp"
+		android:max="10"
+		android:min="1"
+		android:progress="5"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.0"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textDefenderStat" />
+
+	<TextView
+		android:id="@+id/textDefenderFlip"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="20dp"
+		android:layout_marginTop="24dp"
+		android:text="Flip"
+		android:textSize="16sp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.005"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/seekBarDefenderStat" />
+
+	<SeekBar
+		android:id="@+id/seekBarDefenderFlip"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="4dp"
+		android:max="10"
+		android:min="1"
+		android:progress="5"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="1.0"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textDefenderFlip" />
+
+	<TextView
+		android:id="@+id/textDefenderTotal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="24dp"
+		android:text="Total"
+		android:textSize="16sp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.404"
+		app:layout_constraintStart_toEndOf="@+id/textHeadingDefender"
+		app:layout_constraintTop_toBottomOf="@+id/seekBarAttackerFlip" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

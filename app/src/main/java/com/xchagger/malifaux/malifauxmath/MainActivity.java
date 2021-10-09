@@ -7,8 +7,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.xchagger.malifaux.malifauxmath.domain.Values;
-import com.xchagger.malifaux.malifauxmath.listener.handler.AttackFlipChangedHandler;
-import com.xchagger.malifaux.malifauxmath.listener.handler.AttackStatChangedHandler;
+import com.xchagger.malifaux.malifauxmath.listener.FlipChangedListener;
+import com.xchagger.malifaux.malifauxmath.listener.StatChangedListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initAttacker();
-
+        initDefender();
     }
 
     private void initAttacker() {
@@ -36,14 +36,39 @@ public class MainActivity extends AppCompatActivity {
         attackerTotal.setText(values.getAttackerTotal());
 
         // sliders
-        attackerStatSeekBar.setOnSeekBarChangeListener(AttackStatChangedHandler.builder()
-                .attackerStatText(attackerStatText)
-                .attackerTotal(attackerTotal)
+        attackerStatSeekBar.setOnSeekBarChangeListener(StatChangedListener.builder()
+                .statText(attackerStatText)
+                .total(attackerTotal)
                 .values(values)
                 .build());
-        attackerFlipSeekBar.setOnSeekBarChangeListener(AttackFlipChangedHandler.builder()
-                .attackerFlipText(attackerFlipText)
-                .attackerTotal(attackerTotal)
+        attackerFlipSeekBar.setOnSeekBarChangeListener(FlipChangedListener.builder()
+                .flipText(attackerFlipText)
+                .total(attackerTotal)
+                .values(values)
+                .build());
+    }
+
+    private void initDefender() {
+        TextView DefenderTotal = findViewById(R.id.textDefenderTotal);
+        TextView DefenderStatText = findViewById(R.id.textDefenderStat);
+        SeekBar DefenderStatSeekBar = findViewById(R.id.seekBarDefenderStat);
+        TextView DefenderFlipText = findViewById(R.id.textDefenderFlip);
+        SeekBar DefenderFlipSeekBar = findViewById(R.id.seekBarDefenderFlip);
+
+        // set defaults:
+        DefenderStatText.setText(values.getDefenderStat());
+        DefenderFlipText.setText(values.getDefenderFlip());
+        DefenderTotal.setText(values.getDefenderTotal());
+
+        // sliders
+        DefenderStatSeekBar.setOnSeekBarChangeListener(StatChangedListener.builder()
+                .statText(DefenderStatText)
+                .total(DefenderTotal)
+                .values(values)
+                .build());
+        DefenderFlipSeekBar.setOnSeekBarChangeListener(FlipChangedListener.builder()
+                .flipText(DefenderFlipText)
+                .total(DefenderTotal)
                 .values(values)
                 .build());
     }
