@@ -22,7 +22,7 @@
 		android:id="@+id/textAttackerTotal"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_margin="20dp"
+		android:layout_margin="12dp"
 		android:text="Total"
 		android:textSize="16sp"
 		app:layout_constraintEnd_toEndOf="parent"
@@ -34,8 +34,8 @@
 		android:id="@+id/textAttackerStat"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_margin="20dp"
-		android:layout_marginTop="24dp"
+		android:layout_margin="12dp"
+		android:layout_marginTop="16dp"
 		android:text="Stat"
 		android:textSize="16sp"
 		app:layout_constraintEnd_toEndOf="parent"
@@ -60,8 +60,8 @@
 		android:id="@+id/textAttackerFlip"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_margin="20dp"
-		android:layout_marginTop="24dp"
+		android:layout_margin="12dp"
+		android:layout_marginTop="16dp"
 		android:text="Flip"
 		android:textSize="16sp"
 		app:layout_constraintEnd_toEndOf="parent"
@@ -87,7 +87,7 @@
 		android:id="@+id/textHeadingDefender"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="24dp"
+		android:layout_marginTop="16dp"
 		android:text="Defender"
 		android:textSize="16sp"
 		android:textStyle="bold"
@@ -98,8 +98,8 @@
 		android:id="@+id/textDefenderStat"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_margin="20dp"
-		android:layout_marginTop="24dp"
+		android:layout_margin="12dp"
+		android:layout_marginTop="16dp"
 		android:text="Stat"
 		android:textSize="16sp"
 		app:layout_constraintEnd_toEndOf="parent"
@@ -124,8 +124,8 @@
 		android:id="@+id/textDefenderFlip"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_margin="20dp"
-		android:layout_marginTop="24dp"
+		android:layout_margin="12dp"
+		android:layout_marginTop="16dp"
 		android:text="Flip"
 		android:textSize="16sp"
 		app:layout_constraintEnd_toEndOf="parent"
@@ -150,12 +150,117 @@
 		android:id="@+id/textDefenderTotal"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="24dp"
+		android:layout_marginTop="16dp"
 		android:text="Total"
 		android:textSize="16sp"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintHorizontal_bias="0.404"
 		app:layout_constraintStart_toEndOf="@+id/textHeadingDefender"
 		app:layout_constraintTop_toBottomOf="@+id/seekBarAttackerFlip" />
+
+	<TextView
+		android:id="@+id/textResult"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="16dp"
+		android:text="Results"
+		android:textSize="16sp"
+		android:textStyle="bold"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/seekBarDefenderFlip" />
+
+	<TextView
+		android:id="@+id/textWinner"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="16dp"
+		android:text="X wins"
+		android:textSize="16sp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.404"
+		app:layout_constraintStart_toEndOf="@+id/textResult"
+		app:layout_constraintTop_toBottomOf="@+id/seekBarDefenderFlip" />
+
+
+	<TextView
+		android:id="@+id/textDefenderDoubleNeg"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="12dp"
+		android:layout_marginTop="16dp"
+		android:text="textDefenderDoubleNeg"
+		android:textSize="16sp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.005"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textResult" />
+
+	<TextView
+		android:id="@+id/textTieModifiers"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="12dp"
+		android:layout_marginTop="16dp"
+		android:text="textTieModifiers"
+		android:textSize="16sp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.005"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textDefenderDoubleNeg" />
+
+	<TextView
+		android:id="@+id/textDoubleModifiers"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="12dp"
+		android:layout_marginTop="16dp"
+		android:text="textDoubleModifiers"
+		android:textSize="16sp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.005"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textTieModifiers" />
+
+	<TextView
+		android:id="@+id/textSingleModifiers"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="12dp"
+		android:layout_marginTop="16dp"
+		android:text="textSingleModifiers"
+		android:textSize="16sp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.005"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textDoubleModifiers" />
+
+	<TextView
+		android:id="@+id/textStraightModifiers"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="12dp"
+		android:layout_marginTop="16dp"
+		android:text="textStraightModifiers"
+		android:textSize="16sp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.005"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textSingleModifiers" />
+
+	<TextView
+		android:id="@+id/textPositiveModifiers"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="12dp"
+		android:layout_marginTop="16dp"
+		android:text="textPositiveModifiers"
+		android:textSize="16sp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.005"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textStraightModifiers" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
