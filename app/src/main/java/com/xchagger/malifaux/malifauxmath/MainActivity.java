@@ -1,5 +1,12 @@
 package com.xchagger.malifaux.malifauxmath;
 
+import static com.xchagger.malifaux.malifauxmath.domain.Constants.ATTACKER_FLIP;
+import static com.xchagger.malifaux.malifauxmath.domain.Constants.ATTACKER_STAT;
+import static com.xchagger.malifaux.malifauxmath.domain.Constants.ATTACKER_TOTAL;
+import static com.xchagger.malifaux.malifauxmath.domain.Constants.DEFENDER_FLIP;
+import static com.xchagger.malifaux.malifauxmath.domain.Constants.DEFENDER_STAT;
+import static com.xchagger.malifaux.malifauxmath.domain.Constants.DEFENDER_TOTAL;
+
 import android.os.Bundle;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -7,8 +14,12 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.xchagger.malifaux.malifauxmath.domain.Values;
-import com.xchagger.malifaux.malifauxmath.listener.FlipChangedListener;
-import com.xchagger.malifaux.malifauxmath.listener.StatChangedListener;
+import com.xchagger.malifaux.malifauxmath.listener.AttackerOptionsListener;
+import com.xchagger.malifaux.malifauxmath.listener.ChangeListener;
+import com.xchagger.malifaux.malifauxmath.listener.SeekbarChangeListener;
+import com.xchagger.malifaux.malifauxmath.listener.TieModifierListener;
+import com.xchagger.malifaux.malifauxmath.listener.TotalChangeListener;
+import com.xchagger.malifaux.malifauxmath.listener.WinnerListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,57 +32,73 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initAttacker();
         initDefender();
+        initResults();
     }
 
     private void initAttacker() {
         TextView attackerTotal = findViewById(R.id.textAttackerTotal);
         TextView attackerStatText = findViewById(R.id.textAttackerStat);
-        SeekBar attackerStatSeekBar = findViewById(R.id.seekBarAttackerStat);
         TextView attackerFlipText = findViewById(R.id.textAttackerFlip);
+        SeekBar attackerStatSeekBar = findViewById(R.id.seekBarAttackerStat);
         SeekBar attackerFlipSeekBar = findViewById(R.id.seekBarAttackerFlip);
 
-        // set defaults:
-        attackerStatText.setText(values.getAttackerStat());
-        attackerFlipText.setText(values.getAttackerFlip());
-        attackerTotal.setText(values.getAttackerTotal());
+        attackerStatSeekBar.setOnSeekBarChangeListener(
+                new SeekbarChangeListener(values, ATTACKER_STAT));
 
-        // sliders
-        attackerStatSeekBar.setOnSeekBarChangeListener(StatChangedListener.builder()
-                .statText(attackerStatText)
-                .total(attackerTotal)
-                .values(values)
-                .build());
-        attackerFlipSeekBar.setOnSeekBarChangeListener(FlipChangedListener.builder()
-                .flipText(attackerFlipText)
-                .total(attackerTotal)
-                .values(values)
-                .build());
+        attackerFlipSeekBar.setOnSeekBarChangeListener(
+                new SeekbarChangeListener(values, ATTACKER_FLIP));
+
+        // register observers
+        values.addPropertyChangeListener(new ChangeListener(ATTACKER_STAT, attackerStatText));
+        values.addPropertyChangeListener(new ChangeListener(ATTACKER_FLIP, attackerFlipText));
+        values.addPropertyChangeListener(new TotalChangeListener(ATTACKER_TOTAL, attackerTotal));
+
+
+        // set defaults:
+        attackerStatText.setText("Stat: " +values.getAttackerStat());
+        attackerFlipText.setText("Flip: " +values.getAttackerFlip());
+        attackerTotal.setText("Total: " + (values.getAttackerStat() + values.getAttackerFlip()));
     }
 
     private void initDefender() {
-        TextView DefenderTotal = findViewById(R.id.textDefenderTotal);
-        TextView DefenderStatText = findViewById(R.id.textDefenderStat);
-        SeekBar DefenderStatSeekBar = findViewById(R.id.seekBarDefenderStat);
-        TextView DefenderFlipText = findViewById(R.id.textDefenderFlip);
-        SeekBar DefenderFlipSeekBar = findViewById(R.id.seekBarDefenderFlip);
+        TextView defenderTotal = findViewById(R.id.textDefenderTotal);
+        TextView defenderStatText = findViewById(R.id.textDefenderStat);
+        TextView defenderFlipText = findViewById(R.id.textDefenderFlip);
+        SeekBar defenderStatSeekBar = findViewById(R.id.seekBarDefenderStat);
+        SeekBar defenderFlipSeekBar = findViewById(R.id.seekBarDefenderFlip);
+
+        defenderStatSeekBar.setOnSeekBarChangeListener(
+                new SeekbarChangeListener(values, DEFENDER_STAT));
+
+        defenderFlipSeekBar.setOnSeekBarChangeListener(
+                new SeekbarChangeListener(values, DEFENDER_FLIP));
+
+        // register observers
+        values.addPropertyChangeListener(new ChangeListener(DEFENDER_STAT, defenderStatText));
+        values.addPropertyChangeListener(new ChangeListener(DEFENDER_FLIP, defenderFlipText));
+        values.addPropertyChangeListener(new TotalChangeListener(DEFENDER_TOTAL, defenderTotal));
+
 
         // set defaults:
-        DefenderStatText.setText(values.getDefenderStat());
-        DefenderFlipText.setText(values.getDefenderFlip());
-        DefenderTotal.setText(values.getDefenderTotal());
-
-        // sliders
-        DefenderStatSeekBar.setOnSeekBarChangeListener(StatChangedListener.builder()
-                .statText(DefenderStatText)
-                .total(DefenderTotal)
-                .values(values)
-                .build());
-        DefenderFlipSeekBar.setOnSeekBarChangeListener(FlipChangedListener.builder()
-                .flipText(DefenderFlipText)
-                .total(DefenderTotal)
-                .values(values)
-                .build());
+        defenderStatText.setText("Stat: " +values.getDefenderStat());
+        defenderFlipText.setText("Flip: " +values.getDefenderFlip());
+        defenderTotal.setText("Total: " + (values.getDefenderStat() + values.getDefenderFlip()));
     }
 
+    private void initResults() {
+        TextView textWinner = findViewById(R.id.textWinner);
+        TextView textTieModifiers = findViewById(R.id.textTieModifiers);
+        TextView textAttackerOptions = findViewById(R.id.textAttackerOptions);
+
+        // register observers
+        values.addPropertyChangeListener(new WinnerListener(textWinner));
+        values.addPropertyChangeListener(new TieModifierListener(textTieModifiers));
+        values.addPropertyChangeListener(new AttackerOptionsListener(textAttackerOptions));
+
+        // set defaults:
+        textWinner.setText("");
+        textTieModifiers.setText("");
+        textAttackerOptions.setText("");
+    }
 
 }

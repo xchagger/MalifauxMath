@@ -1,42 +1,54 @@
 package com.xchagger.malifaux.malifauxmath.domain;
 
-import lombok.Setter;
+import static com.xchagger.malifaux.malifauxmath.domain.Constants.ATTACKER_FLIP;
+import static com.xchagger.malifaux.malifauxmath.domain.Constants.ATTACKER_STAT;
+import static com.xchagger.malifaux.malifauxmath.domain.Constants.DEFENDER_FLIP;
+import static com.xchagger.malifaux.malifauxmath.domain.Constants.DEFENDER_STAT;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+
+import lombok.AccessLevel;
+import lombok.Getter;
+
+@Getter
 public class Values {
 
-    @Setter
+    public Values() {
+        support = new PropertyChangeSupport(this);
+    }
+
+    @Getter(AccessLevel.NONE)
+    private final PropertyChangeSupport support;
+
     private Integer attackerStat = 5;
-    @Setter
     private Integer attackerFlip = 5;
-
-    public String getAttackerTotal() {
-        return "Total: " + (attackerStat + attackerFlip);
-    }
-
-    public String getAttackerStat() {
-        return "Stat: " + attackerStat;
-    }
-
-    public String getAttackerFlip() {
-        return "Flip: " + attackerFlip;
-    }
-
-
-    @Setter
     private Integer defenderStat = 5;
-    @Setter
     private Integer defenderFlip = 5;
 
-    public String getDefenderTotal() {
-        return "Total: " + (defenderStat + defenderFlip);
+    public void setAttackerStat(Integer attackerStat) {
+        support.firePropertyChange(ATTACKER_STAT, this.attackerStat, attackerStat);
+        this.attackerStat = attackerStat;
     }
 
-    public String getDefenderStat() {
-        return "Stat: " + defenderStat;
+    public void setAttackerFlip(Integer attackerFlip) {
+        support.firePropertyChange(ATTACKER_FLIP, this.attackerFlip, attackerFlip);
+        this.attackerFlip = attackerFlip;
     }
 
-    public String getDefenderFlip() {
-        return "Flip: " + defenderFlip;
+    public void setDefenderStat(Integer defenderStat) {
+        support.firePropertyChange(DEFENDER_STAT, this.defenderStat, defenderStat);
+        this.defenderStat = defenderStat;
+    }
+
+    public void setDefenderFlip(Integer defenderFlip) {
+        support.firePropertyChange(DEFENDER_FLIP, this.defenderFlip, defenderFlip);
+        this.defenderFlip = defenderFlip;
+    }
+
+    // events
+    public void addPropertyChangeListener(PropertyChangeListener pcl) {
+        support.addPropertyChangeListener(pcl);
     }
 
 }
