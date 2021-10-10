@@ -174,7 +174,6 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_marginTop="16dp"
-		android:text="X wins"
 		android:textSize="16sp"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintHorizontal_bias="0.404"
@@ -182,12 +181,11 @@
 		app:layout_constraintTop_toBottomOf="@+id/seekBarDefenderFlip" />
 
 	<TextView
-		android:id="@+id/textDefenderDoubleNeg"
+		android:id="@+id/textTieModifiers"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_margin="12dp"
 		android:layout_marginTop="16dp"
-		android:text="textDefenderDoubleNeg"
 		android:textSize="16sp"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintHorizontal_bias="0.005"
@@ -195,25 +193,11 @@
 		app:layout_constraintTop_toBottomOf="@+id/textResult" />
 
 	<TextView
-		android:id="@+id/textTieModifiers"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_margin="12dp"
-		android:layout_marginTop="16dp"
-		android:text="textTieModifiers"
-		android:textSize="16sp"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="0.005"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/textDefenderDoubleNeg" />
-
-	<TextView
 		android:id="@+id/textAttackerOptions"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_margin="12dp"
 		android:layout_marginTop="16dp"
-		android:text="textAttackerOptions"
 		android:textSize="16sp"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintHorizontal_bias="0.005"
@@ -221,45 +205,15 @@
 		app:layout_constraintTop_toBottomOf="@+id/textTieModifiers" />
 
 	<TextView
-		android:id="@+id/textSingleModifiers"
+		android:id="@+id/textDefenderOptions"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_margin="12dp"
 		android:layout_marginTop="16dp"
-		android:text="textSingleModifiers"
 		android:textSize="16sp"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintHorizontal_bias="0.005"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toBottomOf="@+id/textAttackerOptions" />
-
-	<TextView
-		android:id="@+id/textStraightModifiers"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_margin="12dp"
-		android:layout_marginTop="16dp"
-		android:text="textStraightModifiers"
-		android:textSize="16sp"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="0.005"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/textSingleModifiers" />
-
-	<TextView
-		android:id="@+id/textPositiveModifiers"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_margin="12dp"
-		android:layout_marginTop="16dp"
-		android:text="textPositiveModifiers"
-		android:textSize="16sp"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="0.005"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/textStraightModifiers" />
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
