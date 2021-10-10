@@ -34,11 +34,11 @@ public class AttackerOptionsListener extends AbstractWinnerCalculator implements
         if (defenderTotal > attackerTotal) {
             textView.setText("Attacker Options: - - " + toTie +
                     " | - " + singleNeg +
-                    " | S: " + noModifier +
+                    " | S " + noModifier +
                     " | + " + positive);
         } else if (defenderTotal == attackerTotal) {
             textView.setText("Attacker Options: - " + singleNeg +
-                    " | S: " + noModifier +
+                    " | S " + noModifier +
                     " | + " + positive);
         } else if (difference < 6) {
             textView.setText("Attacker Options: S: " + noModifier +

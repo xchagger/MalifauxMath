@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.xchagger.malifaux.malifauxmath.domain.Values;
 import com.xchagger.malifaux.malifauxmath.listener.AttackerOptionsListener;
 import com.xchagger.malifaux.malifauxmath.listener.ChangeListener;
+import com.xchagger.malifaux.malifauxmath.listener.DefenderMitigationListener;
 import com.xchagger.malifaux.malifauxmath.listener.DefenderOptionsListener;
 import com.xchagger.malifaux.malifauxmath.listener.SeekbarChangeListener;
 import com.xchagger.malifaux.malifauxmath.listener.TieModifierListener;
@@ -35,8 +36,11 @@ public class MainActivity extends AppCompatActivity {
         initDefender();
         initResults();
 
-        // trigger change handlers
+        // set initial values
         values.setAttackerStat(5);
+        values.setAttackerFlip(7);
+        values.setDefenderStat(5);
+        values.setDefenderFlip(7);
     }
 
     private void initAttacker() {
@@ -56,11 +60,6 @@ public class MainActivity extends AppCompatActivity {
         values.addPropertyChangeListener(new ChangeListener(ATTACKER_STAT, attackerStatText));
         values.addPropertyChangeListener(new ChangeListener(ATTACKER_FLIP, attackerFlipText));
         values.addPropertyChangeListener(new TotalChangeListener(ATTACKER_TOTAL, attackerTotal));
-
-//        // set defaults:
-//        attackerStatText.setText("Stat: " +values.getAttackerStat());
-//        attackerFlipText.setText("Flip: " +values.getAttackerFlip());
-//        attackerTotal.setText("Total: " + (values.getAttackerStat() + values.getAttackerFlip()));
     }
 
     private void initDefender() {
@@ -80,12 +79,6 @@ public class MainActivity extends AppCompatActivity {
         values.addPropertyChangeListener(new ChangeListener(DEFENDER_STAT, defenderStatText));
         values.addPropertyChangeListener(new ChangeListener(DEFENDER_FLIP, defenderFlipText));
         values.addPropertyChangeListener(new TotalChangeListener(DEFENDER_TOTAL, defenderTotal));
-
-
-//        // set defaults:
-//        defenderStatText.setText("Stat: " +values.getDefenderStat());
-//        defenderFlipText.setText("Flip: " +values.getDefenderFlip());
-//        defenderTotal.setText("Total: " + (values.getDefenderStat() + values.getDefenderFlip()));
     }
 
     private void initResults() {
@@ -93,18 +86,15 @@ public class MainActivity extends AppCompatActivity {
         TextView textTieModifiers = findViewById(R.id.textTieModifiers);
         TextView textAttackerOptions = findViewById(R.id.textAttackerOptions);
         TextView textDefenderOptions = findViewById(R.id.textDefenderOptions);
+        TextView textDefenderMitigation = findViewById(R.id.textDefenderMitigation);
 
         // register observers
         values.addPropertyChangeListener(new WinnerListener(textWinner));
         values.addPropertyChangeListener(new TieModifierListener(textTieModifiers));
         values.addPropertyChangeListener(new AttackerOptionsListener(textAttackerOptions));
         values.addPropertyChangeListener(new DefenderOptionsListener(textDefenderOptions));
+        values.addPropertyChangeListener(new DefenderMitigationListener(textDefenderMitigation));
 
-//        // set defaults:
-//        textWinner.setText("");
-//        textTieModifiers.setText("");
-//        textAttackerOptions.setText("");
-//        textAttackerOptions.setText("");
     }
 
 }

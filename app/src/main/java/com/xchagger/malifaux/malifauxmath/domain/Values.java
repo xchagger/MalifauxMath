@@ -21,10 +21,10 @@ public class Values {
     @Getter(AccessLevel.NONE)
     private final PropertyChangeSupport support;
 
-    private Integer attackerStat = 1; // set to 1 so that we can initialise by setting to 5
-    private Integer attackerFlip = 5;
-    private Integer defenderStat = 5;
-    private Integer defenderFlip = 5;
+    private Integer attackerStat = 0;
+    private Integer attackerFlip = 0;
+    private Integer defenderStat = 0;
+    private Integer defenderFlip = 0;
 
     public void setAttackerStat(Integer attackerStat) {
         support.firePropertyChange(ATTACKER_STAT, this.attackerStat, attackerStat);

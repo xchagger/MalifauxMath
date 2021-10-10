@@ -28,6 +28,7 @@ public class DefenderOptionsListener extends AbstractWinnerCalculator implements
     private void defenderLosing(int difference) {
         int toTie = attackerTotal - defenderTotal + defenderFlip;
         int toWin = toTie + 1;
+
         if (difference == 0) {
             textView.setText("Defender Options: Win: " + toWin);
         } else {
