@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.warkiz.widget.IndicatorSeekBar;
 import com.xchagger.malifaux.malifauxmath.domain.Values;
 import com.xchagger.malifaux.malifauxmath.listener.AttackerOptionsListener;
 import com.xchagger.malifaux.malifauxmath.listener.ChangeListener;
@@ -47,13 +48,13 @@ public class MainActivity extends AppCompatActivity {
         TextView attackerTotal = findViewById(R.id.textAttackerTotal);
         TextView attackerStatText = findViewById(R.id.textAttackerStat);
         TextView attackerFlipText = findViewById(R.id.textAttackerFlip);
-        SeekBar attackerStatSeekBar = findViewById(R.id.seekBarAttackerStat);
-        SeekBar attackerFlipSeekBar = findViewById(R.id.seekBarAttackerFlip);
+        IndicatorSeekBar attackerStatSeekBar = findViewById(R.id.seekBarAttackerStat);
+        IndicatorSeekBar attackerFlipSeekBar = findViewById(R.id.seekBarAttackerFlip);
 
-        attackerStatSeekBar.setOnSeekBarChangeListener(
+        attackerStatSeekBar.setOnSeekChangeListener(
                 new SeekbarChangeListener(values, ATTACKER_STAT));
 
-        attackerFlipSeekBar.setOnSeekBarChangeListener(
+        attackerFlipSeekBar.setOnSeekChangeListener(
                 new SeekbarChangeListener(values, ATTACKER_FLIP));
 
         // register observers
@@ -66,13 +67,13 @@ public class MainActivity extends AppCompatActivity {
         TextView defenderTotal = findViewById(R.id.textDefenderTotal);
         TextView defenderStatText = findViewById(R.id.textDefenderStat);
         TextView defenderFlipText = findViewById(R.id.textDefenderFlip);
-        SeekBar defenderStatSeekBar = findViewById(R.id.seekBarDefenderStat);
-        SeekBar defenderFlipSeekBar = findViewById(R.id.seekBarDefenderFlip);
+        IndicatorSeekBar defenderStatSeekBar = findViewById(R.id.seekBarDefenderStat);
+        IndicatorSeekBar defenderFlipSeekBar = findViewById(R.id.seekBarDefenderFlip);
 
-        defenderStatSeekBar.setOnSeekBarChangeListener(
+        defenderStatSeekBar.setOnSeekChangeListener(
                 new SeekbarChangeListener(values, DEFENDER_STAT));
 
-        defenderFlipSeekBar.setOnSeekBarChangeListener(
+        defenderFlipSeekBar.setOnSeekChangeListener(
                 new SeekbarChangeListener(values, DEFENDER_FLIP));
 
         // register observers
