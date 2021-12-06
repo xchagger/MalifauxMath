@@ -5,275 +5,400 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-	<TextView
-		android:id="@+id/textHeadingAttacker"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="Attacker"
-		android:textSize="16sp"
-		android:textStyle="bold"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="0.0"
-		app:layout_constraintStart_toStartOf="parent"
-		tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/textHeadingAttacker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Attacker"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="0dp" />
 
 
-	<TextView
-		android:id="@+id/textAttackerTotal"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_margin="12dp"
-		android:text="Total"
-		android:textSize="16sp"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="0.401"
-		app:layout_constraintStart_toEndOf="@+id/textHeadingAttacker"
-		tools:layout_editor_absoluteY="0dp" />
+    <TextView
+        android:id="@+id/textAttackerTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:text="Total"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.401"
+        app:layout_constraintStart_toEndOf="@+id/textHeadingAttacker"
+        tools:layout_editor_absoluteY="0dp" />
 
-	<TextView
-		android:id="@+id/textAttackerStat"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_margin="12dp"
-		android:layout_marginTop="16dp"
-		android:text="Stat"
-		android:textSize="16sp"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="0.0"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/textHeadingAttacker" />
+    <TextView
+        android:id="@+id/textAttackerStat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:layout_marginTop="16dp"
+        android:text="Stat"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textHeadingAttacker" />
 
-	<com.warkiz.widget.IndicatorSeekBar
-		android:id="@+id/seekBarAttackerStat"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		app:isb_max="10"
-		app:isb_min="1"
-		app:isb_progress="5"
-		app:isb_seek_smoothly="true"
-		app:isb_ticks_count="10"
-		app:isb_show_tick_marks_type="oval"
-		app:isb_tick_marks_size="13dp"
-		app:isb_tick_marks_drawable="@mipmap/ic_launcher"
-		app:isb_show_tick_texts="true"
-		app:isb_tick_texts_size="15sp"
-		app:isb_thumb_size="20dp"
-		app:isb_show_indicator="rounded_rectangle"
-		app:isb_indicator_text_size="18sp"
-		app:isb_track_background_size="2dp"
-		app:isb_track_progress_size="4dp"
-		app:isb_only_thumb_draggable="false"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="0.0"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/textAttackerStat" />
+    <com.warkiz.widget.IndicatorSeekBar
+        android:id="@+id/seekBarAttackerStat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:isb_indicator_text_size="18sp"
+        app:isb_max="10"
+        app:isb_min="1"
+        app:isb_only_thumb_draggable="false"
+        app:isb_progress="5"
+        app:isb_seek_smoothly="true"
+        app:isb_show_indicator="rounded_rectangle"
+        app:isb_show_tick_marks_type="oval"
+        app:isb_show_tick_texts="true"
+        app:isb_thumb_size="20dp"
+        app:isb_tick_marks_drawable="@mipmap/ic_malifaux"
+        app:isb_tick_marks_size="13dp"
+        app:isb_tick_texts_size="15sp"
+        app:isb_ticks_count="10"
+        app:isb_track_background_size="2dp"
+        app:isb_track_progress_size="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textAttackerStat" />
 
-	<TextView
-		android:id="@+id/textAttackerFlip"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_margin="12dp"
-		android:layout_marginTop="16dp"
-		android:text="Flip"
-		android:textSize="16sp"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="0.0"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/seekBarAttackerStat" />
+    <TextView
+        android:id="@+id/textAttackerFlip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:layout_marginTop="16dp"
+        android:text="Flip"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarAttackerStat" />
 
-	<com.warkiz.widget.IndicatorSeekBar
-		android:id="@+id/seekBarAttackerFlip"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		app:isb_max="14"
-		app:isb_min="1"
-		app:isb_progress="5"
-		app:isb_seek_smoothly="true"
-		app:isb_ticks_count="14"
-		app:isb_show_tick_marks_type="oval"
-		app:isb_tick_marks_size="13dp"
-		app:isb_tick_marks_drawable="@mipmap/ic_launcher"
-		app:isb_show_tick_texts="true"
-		app:isb_tick_texts_size="15sp"
-		app:isb_thumb_size="20dp"
-		app:isb_show_indicator="rounded_rectangle"
-		app:isb_indicator_text_size="18sp"
-		app:isb_track_background_size="2dp"
-		app:isb_track_progress_size="4dp"
-		app:isb_only_thumb_draggable="false"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="0.0"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/textAttackerFlip" />
+    <com.warkiz.widget.IndicatorSeekBar
+        android:id="@+id/seekBarAttackerFlip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:isb_indicator_text_size="18sp"
+        app:isb_max="14"
+        app:isb_min="1"
+        app:isb_only_thumb_draggable="false"
+        app:isb_progress="5"
+        app:isb_seek_smoothly="true"
+        app:isb_show_indicator="rounded_rectangle"
+        app:isb_show_tick_marks_type="oval"
+        app:isb_show_tick_texts="true"
+        app:isb_thumb_size="20dp"
+        app:isb_tick_marks_drawable="@mipmap/ic_malifaux"
+        app:isb_tick_marks_size="13dp"
+        app:isb_tick_texts_size="15sp"
+        app:isb_ticks_count="14"
+        app:isb_track_background_size="2dp"
+        app:isb_track_progress_size="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textAttackerFlip" />
 
 
-	<TextView
-		android:id="@+id/textHeadingDefender"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="16dp"
-		android:text="Defender"
-		android:textSize="16sp"
-		android:textStyle="bold"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/seekBarAttackerFlip" />
+    <TextView
+        android:id="@+id/textHeadingDefender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Defender"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarAttackerFlip" />
 
-	<TextView
-		android:id="@+id/textDefenderStat"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_margin="12dp"
-		android:layout_marginTop="16dp"
-		android:text="Stat"
-		android:textSize="16sp"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="0.005"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/textHeadingDefender" />
+    <TextView
+        android:id="@+id/textDefenderStat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:layout_marginTop="16dp"
+        android:text="Stat"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textHeadingDefender" />
 
-	<com.warkiz.widget.IndicatorSeekBar
-		android:id="@+id/seekBarDefenderStat"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		app:isb_max="10"
-		app:isb_min="1"
-		app:isb_progress="5"
-		app:isb_seek_smoothly="true"
-		app:isb_ticks_count="10"
-		app:isb_show_tick_marks_type="oval"
-		app:isb_tick_marks_size="13dp"
-		app:isb_tick_marks_drawable="@mipmap/ic_launcher"
-		app:isb_show_tick_texts="true"
-		app:isb_tick_texts_size="15sp"
-		app:isb_thumb_size="20dp"
-		app:isb_show_indicator="rounded_rectangle"
-		app:isb_indicator_text_size="18sp"
-		app:isb_track_background_size="2dp"
-		app:isb_track_progress_size="4dp"
-		app:isb_only_thumb_draggable="false"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="0.0"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/textDefenderStat" />
+    <com.warkiz.widget.IndicatorSeekBar
+        android:id="@+id/seekBarDefenderStat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:isb_indicator_text_size="18sp"
+        app:isb_max="10"
+        app:isb_min="1"
+        app:isb_only_thumb_draggable="false"
+        app:isb_progress="5"
+        app:isb_seek_smoothly="true"
+        app:isb_show_indicator="rounded_rectangle"
+        app:isb_show_tick_marks_type="oval"
+        app:isb_show_tick_texts="true"
+        app:isb_thumb_size="20dp"
+        app:isb_tick_marks_drawable="@mipmap/ic_malifaux"
+        app:isb_tick_marks_size="13dp"
+        app:isb_tick_texts_size="15sp"
+        app:isb_ticks_count="10"
+        app:isb_track_background_size="2dp"
+        app:isb_track_progress_size="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textDefenderStat" />
 
-	<TextView
-		android:id="@+id/textDefenderFlip"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_margin="12dp"
-		android:layout_marginTop="16dp"
-		android:text="Flip"
-		android:textSize="16sp"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="0.005"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/seekBarDefenderStat" />
+    <TextView
+        android:id="@+id/textDefenderFlip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:layout_marginTop="16dp"
+        android:text="Flip"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarDefenderStat" />
 
-	<com.warkiz.widget.IndicatorSeekBar
-		android:id="@+id/seekBarDefenderFlip"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		app:isb_max="14"
-		app:isb_min="1"
-		app:isb_progress="5"
-		app:isb_seek_smoothly="true"
-		app:isb_ticks_count="14"
-		app:isb_show_tick_marks_type="oval"
-		app:isb_tick_marks_size="13dp"
-		app:isb_tick_marks_drawable="@mipmap/ic_launcher"
-		app:isb_show_tick_texts="true"
-		app:isb_tick_texts_size="15sp"
-		app:isb_thumb_size="20dp"
-		app:isb_show_indicator="rounded_rectangle"
-		app:isb_indicator_text_size="18sp"
-		app:isb_track_background_size="2dp"
-		app:isb_track_progress_size="4dp"
-		app:isb_only_thumb_draggable="false"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="1.0"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/textDefenderFlip" />
+    <com.warkiz.widget.IndicatorSeekBar
+        android:id="@+id/seekBarDefenderFlip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:isb_indicator_text_size="18sp"
+        app:isb_max="14"
+        app:isb_min="1"
+        app:isb_only_thumb_draggable="false"
+        app:isb_progress="5"
+        app:isb_seek_smoothly="true"
+        app:isb_show_indicator="rounded_rectangle"
+        app:isb_show_tick_marks_type="oval"
+        app:isb_show_tick_texts="true"
+        app:isb_thumb_size="20dp"
+        app:isb_tick_marks_drawable="@mipmap/ic_malifaux"
+        app:isb_tick_marks_size="13dp"
+        app:isb_tick_texts_size="15sp"
+        app:isb_ticks_count="14"
+        app:isb_track_background_size="2dp"
+        app:isb_track_progress_size="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textDefenderFlip" />
 
-	<TextView
-		android:id="@+id/textDefenderTotal"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="16dp"
-		android:text="Total"
-		android:textSize="16sp"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="0.404"
-		app:layout_constraintStart_toEndOf="@+id/textHeadingDefender"
-		app:layout_constraintTop_toBottomOf="@+id/seekBarAttackerFlip" />
+    <TextView
+        android:id="@+id/textDefenderTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Total"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.404"
+        app:layout_constraintStart_toEndOf="@+id/textHeadingDefender"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarAttackerFlip" />
 
-	<TextView
-		android:id="@+id/textWinner"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="16dp"
-		android:textSize="16sp"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="0.404"
-		app:layout_constraintStart_toEndOf="@+id/textResult"
-		app:layout_constraintTop_toBottomOf="@+id/seekBarDefenderFlip" />
+    <TextView
+        android:id="@+id/textWinner"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginTop="4dp"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarDefenderFlip" />
 
-	<TextView
-		android:id="@+id/textResult"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="16dp"
-		android:text="Results"
-		android:textSize="16sp"
-		android:textStyle="bold"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/textWinner" />
 
-	<TextView
-		android:id="@+id/textTieModifiers"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_margin="12dp"
-		android:layout_marginTop="16dp"
-		android:textSize="16sp"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="0.005"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/textResult" />
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textWinner">
 
-	<TextView
-		android:id="@+id/textAttackerOptions"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_margin="12dp"
-		android:layout_marginTop="16dp"
-		android:textSize="16sp"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="0.005"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/textTieModifiers" />
+        <!-- RESULTS -->
+        <RelativeLayout
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.4">
 
-	<TextView
-		android:id="@+id/textDefenderOptions"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_margin="12dp"
-		android:layout_marginTop="16dp"
-		android:textSize="16sp"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="0.005"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/textAttackerOptions" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
 
-	<TextView
-		android:id="@+id/textDefenderMitigation"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_margin="12dp"
-		android:layout_marginTop="16dp"
-		android:textSize="16sp"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="0.005"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/textDefenderOptions" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Results"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- RESULTS TABLE -->
+                <TableLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Modifier:"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/textTieModifiers"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp" />
+                    </TableRow>
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Attacker Options:"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/textAttackerOptions"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp" />
+                    </TableRow>
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Defender Options:"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/textDefenderOptions"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp" />
+                    </TableRow>
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Defender Mitigation:"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/textDefenderMitigation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+        </RelativeLayout>
+        <!-- RESULTS end -->
+        <RelativeLayout
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.2"/>
+        <!-- ACCURACY -->
+        <RelativeLayout
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.4">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Accuracy"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- RESULTS TABLE -->
+                <TableLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tie:"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Damage flip suffers Double Neg"
+                            android:textSize="14sp" />
+                    </TableRow>
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1-5:"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Damage flip suffers Single Neg"
+                            android:textSize="14sp" />
+                    </TableRow>
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="6-10:"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="6-10: No modifier"
+                            android:textSize="14sp" />
+                    </TableRow>
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="11+:"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="11+: Damage flip gains a +"
+                            android:textSize="14sp" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+        </RelativeLayout>
+        <!-- ACCURACY end -->
+
+    </LinearLayout>
+    <!-- TABLE end -->
+
+    <!--    </RelativeLayout>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

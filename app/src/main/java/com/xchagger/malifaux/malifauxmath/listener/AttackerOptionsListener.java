@@ -32,19 +32,19 @@ public class AttackerOptionsListener extends AbstractWinnerCalculator implements
         int positive = noModifier + 10;
 
         if (defenderTotal > attackerTotal) {
-            textView.setText("Attacker Options: - - " + toTie +
+            textView.setText("- - " + toTie +
                     " | - " + singleNeg +
                     " | S " + noModifier +
                     " | + " + positive);
         } else if (defenderTotal == attackerTotal) {
-            textView.setText("Attacker Options: - " + singleNeg +
+            textView.setText("- " + singleNeg +
                     " | S " + noModifier +
                     " | + " + positive);
         } else if (difference < 6) {
-            textView.setText("Attacker Options: S: " + noModifier +
+            textView.setText("S: " + noModifier +
                     " | + " + positive);
         } else if (difference < 11) {
-            textView.setText("Attacker Options: + " + positive);
+            textView.setText("+ " + positive);
         } else if (difference > 10) {
             textView.setText("+ " + positive);
         }
@@ -59,12 +59,12 @@ public class AttackerOptionsListener extends AbstractWinnerCalculator implements
         int toGetPositive = positiveModTarget - winningBy; // 10
 
         if (winningBy < 6) {
-            textView.setText("Attacker Options: S " + (toGetNoMod + attackerFlip) +
+            textView.setText("S " + (toGetNoMod + attackerFlip) +
                     " | + " + (toGetPositive + attackerFlip));
         } else if (attackerFlip >= (toGetPositive + attackerFlip)) {
-            textView.setText("Attacker Options: BOOM");
+            textView.setText("BOOM");
         } else {
-            textView.setText("Attacker Options: + " + (toGetPositive + attackerFlip));
+            textView.setText("+ " + (toGetPositive + attackerFlip));
         }
 
     }

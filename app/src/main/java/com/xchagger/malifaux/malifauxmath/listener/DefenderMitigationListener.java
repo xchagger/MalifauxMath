@@ -37,7 +37,7 @@ public class DefenderMitigationListener extends AbstractWinnerCalculator impleme
         if (defenderFlip < mitigateToTie) {
             output = output.length() == 0 ? output + "- - " + mitigateToTie : output + " | - - " + mitigateToTie;
         }
-        textView.setText("Defender Mitigation: " + output);
+        textView.setText(output);
     }
 
 }

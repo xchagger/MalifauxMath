@@ -30,13 +30,13 @@ public class DefenderOptionsListener extends AbstractWinnerCalculator implements
         int toWin = toTie + 1;
 
         if (difference == 0) {
-            textView.setText("Defender Options: Win: " + toWin);
+            textView.setText("Win: " + toWin);
         } else {
-            textView.setText("Defender Options: Tie: " + toTie + " | Win: " + toWin);
+            textView.setText("Tie: " + toTie + " | Win: " + toWin);
         }
     }
 
     private void defenderWinning() {
-        textView.setText("Defender Options: Winning");
+        textView.setText("Winning");
     }
 }

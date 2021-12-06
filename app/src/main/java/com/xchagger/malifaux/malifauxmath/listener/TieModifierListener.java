@@ -21,15 +21,15 @@ public class TieModifierListener extends AbstractWinnerCalculator implements Pro
 
         int difference = attackerTotal - defenderTotal;
         if (defenderTotal > attackerTotal) {
-            textView.setText("Modifier: None - Defender wins");
+            textView.setText("None - Defender wins");
         } else if (defenderTotal == attackerTotal) {
-            textView.setText("Modifier: Double Neg");
+            textView.setText("Double Neg");
         } else if (difference < 6) {
-            textView.setText("Modifier: Single Neg");
+            textView.setText("Single Neg");
         } else if (difference < 11) {
-            textView.setText("Modifier: No modifier");
+            textView.setText("No modifier");
         } else if (difference > 10) {
-            textView.setText("Modifier: Positive modifier");
+            textView.setText("Positive modifier");
         } else {
             textView.setText("Unexpected: " + attackerTotal + " | " + defenderTotal + " | " + difference);
         }
