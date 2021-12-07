@@ -57,9 +57,9 @@
         app:isb_show_indicator="rounded_rectangle"
         app:isb_show_tick_marks_type="oval"
         app:isb_show_tick_texts="true"
-        app:isb_thumb_size="20dp"
+        app:isb_thumb_size="27dp"
         app:isb_tick_marks_drawable="@mipmap/ic_malifaux_round"
-        app:isb_tick_marks_size="21dp"
+        app:isb_tick_marks_size="23dp"
         app:isb_tick_texts_size="15sp"
         app:isb_ticks_count="10"
         app:isb_track_background_size="2dp"
@@ -95,9 +95,9 @@
         app:isb_show_indicator="rounded_rectangle"
         app:isb_show_tick_marks_type="oval"
         app:isb_show_tick_texts="true"
-        app:isb_thumb_size="20dp"
+        app:isb_thumb_size="27dp"
         app:isb_tick_marks_drawable="@mipmap/ic_malifaux_round"
-        app:isb_tick_marks_size="21dp"
+        app:isb_tick_marks_size="23dp"
         app:isb_tick_texts_size="15sp"
         app:isb_ticks_count="14"
         app:isb_track_background_size="2dp"
@@ -145,9 +145,9 @@
         app:isb_show_indicator="rounded_rectangle"
         app:isb_show_tick_marks_type="oval"
         app:isb_show_tick_texts="true"
-        app:isb_thumb_size="20dp"
+        app:isb_thumb_size="27dp"
         app:isb_tick_marks_drawable="@mipmap/ic_malifaux_round"
-        app:isb_tick_marks_size="21dp"
+        app:isb_tick_marks_size="23dp"
         app:isb_tick_texts_size="15sp"
         app:isb_ticks_count="10"
         app:isb_track_background_size="2dp"
@@ -183,9 +183,9 @@
         app:isb_show_indicator="rounded_rectangle"
         app:isb_show_tick_marks_type="oval"
         app:isb_show_tick_texts="true"
-        app:isb_thumb_size="20dp"
+        app:isb_thumb_size="27dp"
         app:isb_tick_marks_drawable="@mipmap/ic_malifaux_round"
-        app:isb_tick_marks_size="21dp"
+        app:isb_tick_marks_size="23dp"
         app:isb_tick_texts_size="15sp"
         app:isb_ticks_count="14"
         app:isb_track_background_size="2dp"
@@ -212,9 +212,9 @@
         android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:layout_marginTop="4dp"
+        android:gravity="center"
         android:textSize="28sp"
         android:textStyle="bold"
-        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/seekBarDefenderFlip" />
@@ -254,7 +254,9 @@
                     android:layout_height="fill_parent"
                     android:orientation="horizontal"
                     android:weightSum="3">
+
                     <TableRow>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -262,12 +264,18 @@
                             android:textSize="14sp"
                             android:textStyle="bold" />
                         <TextView
+                            android:layout_width="10dp"
+                            android:layout_height="wrap_content"
+                            tools:text="" />
+                        <TextView
                             android:id="@+id/textTieModifiers"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="14sp" />
                     </TableRow>
+
                     <TableRow>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -275,18 +283,28 @@
                             android:textSize="14sp"
                             android:textStyle="bold" />
                         <TextView
+                            android:layout_width="10dp"
+                            android:layout_height="wrap_content"
+                            tools:text="" />
+                        <TextView
                             android:id="@+id/textAttackerOptions"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="14sp" />
                     </TableRow>
+
                     <TableRow>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Defender Options:"
                             android:textSize="14sp"
                             android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="10dp"
+                            android:layout_height="wrap_content"
+                            tools:text="" />
                         <TextView
                             android:id="@+id/textDefenderOptions"
                             android:layout_width="wrap_content"
@@ -301,6 +319,10 @@
                             android:textSize="14sp"
                             android:textStyle="bold" />
                         <TextView
+                            android:layout_width="10dp"
+                            android:layout_height="wrap_content"
+                            tools:text="" />
+                        <TextView
                             android:id="@+id/textDefenderMitigation"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -313,26 +335,23 @@
         <RelativeLayout
             android:layout_width="0dip"
             android:layout_height="fill_parent"
-            android:layout_weight="0.2"/>
+            android:layout_weight="0.2" />
         <!-- ACCURACY -->
         <RelativeLayout
             android:layout_width="0dip"
             android:layout_height="fill_parent"
             android:layout_weight="0.4">
-
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:orientation="vertical">
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Accuracy"
                     android:textSize="16sp"
                     android:textStyle="bold" />
-
                 <!-- RESULTS TABLE -->
                 <TableLayout
                     android:layout_width="fill_parent"
@@ -347,6 +366,10 @@
                             android:textSize="14sp"
                             android:textStyle="bold" />
                         <TextView
+                            android:layout_width="10dp"
+                            android:layout_height="wrap_content"
+                            tools:text="" />
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Damage flip suffers Double Neg"
@@ -359,6 +382,10 @@
                             android:text="1-5:"
                             android:textSize="14sp"
                             android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="10dp"
+                            android:layout_height="wrap_content"
+                            tools:text="" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -373,6 +400,10 @@
                             android:textSize="14sp"
                             android:textStyle="bold" />
                         <TextView
+                            android:layout_width="10dp"
+                            android:layout_height="wrap_content"
+                            tools:text="" />
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="6-10: No modifier"
@@ -385,6 +416,10 @@
                             android:text="11+:"
                             android:textSize="14sp"
                             android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="10dp"
+                            android:layout_height="wrap_content"
+                            tools:text="" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
